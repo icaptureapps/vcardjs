@@ -110,7 +110,7 @@ var VCard;
             if(VCard.multivaluedKeys[key]) {
                 if(this[key]) {
                     console.log('multivalued push');
-                    this[key].push(value)
+                    this[key].push(value);
                 } else {
                     console.log('multivalued set');
                     this.setAttribute(key, [value]);
@@ -148,6 +148,7 @@ var VCard;
         //
         // TODO: implement PID matching as described in 7.3.1
         merge: function(other) {
+            var key;
             if(typeof(other.uid) !== 'undefined' &&
                typeof(this.uid) !== 'undefined' &&
                other.uid !== this.uid) {
@@ -191,7 +192,7 @@ var VCard;
         //        maybe there should be more?
         emailType: ["work", "home", "internet"],
         langType: ["work", "home"],
-        
+
     };
 
     VCard.allKeys = [

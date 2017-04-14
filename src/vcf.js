@@ -155,7 +155,7 @@ var VCF;
                 }
             });
         },
-        
+
         nameParts: [
             'family-name', 'given-name', 'additional-name',
             'honorific-prefix', 'honorific-suffix'
@@ -207,7 +207,7 @@ var VCF;
         },
 
         /** Date/Time parser.
-         * 
+         *
          * This implements only the parts of ISO 8601, that are
          * allowed by RFC 6350.
          * Paranthesized examples all represent (parts of):
@@ -296,7 +296,7 @@ var VCF;
 
             var dt = new Date(0);
             if(typeof(h) != 'undefined') { dt.setUTCHours(h); }
-            if(typeof(m) != 'undefined') { dt.setUTCMinutes(m); }           
+            if(typeof(m) != 'undefined') { dt.setUTCMinutes(m); }
             if(typeof(s) != 'undefined') { dt.setUTCSeconds(s); }
 
             if(tz) {
@@ -308,7 +308,7 @@ var VCF;
 
         // add two dates. if addSub is false, substract instead of add.
         addDates: function(aDate, bDate, addSub) {
-            if(typeof(addSub) == 'undefined') { addSub = true };
+            if(typeof(addSub) == 'undefined') { addSub = true; }
             if(! aDate) { return bDate; }
             if(! bDate) { return aDate; }
             var a = Number(aDate);
@@ -378,7 +378,7 @@ var VCF;
                         length = md[0].length;
                     } else {
                         if(line) {
-                            this.lexLine(line, callback);   
+                            this.lexLine(line, callback);
                         }
                         line = md[1];
                         length = md[0].length;
@@ -463,11 +463,11 @@ var VCF;
             }
         },
         /** Quoted Printable Parser
-          * 
-          * Parses quoted-printable strings, which sometimes appear in 
+          *
+          * Parses quoted-printable strings, which sometimes appear in
           * vCard 2.1 files (usually the address field)
-          * 
-          * Code adapted from: 
+          *
+          * Code adapted from:
           * https://github.com/andris9/mimelib
           *
         **/
